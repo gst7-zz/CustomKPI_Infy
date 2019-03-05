@@ -1,0 +1,4 @@
+.api
+.tmp
+dist
+node_modules

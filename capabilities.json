@@ -1,0 +1,179 @@
+{
+    "dataRoles": [    
+    {
+        "displayName": "Actual",
+        "name": "actual",
+        "kind": "Measure",
+        "requiredTypes": [{
+            "numeric": true
+        }, {
+            "integer": true
+            }]
+    }, {
+        "displayName": "Target",
+        "name": "target",
+        "kind": "Measure",
+        "requiredTypes": [{
+            "numeric": true
+        }, {
+            "integer": true
+            }]
+    }, {
+        "displayName": "Threshold",
+        "name": "Threshold",
+        "kind": "Measure",
+        "requiredTypes": [{
+            "numeric": true
+        }, {
+            "integer": true
+        }]
+    }, {
+        "displayName": "Tooltips",
+        "name": "tooltip",
+        "kind": "GroupingOrMeasure" 
+        }
+   ],	
+
+    "dataViewMappings": [{
+        "conditions": [{
+            "region": {
+                "max": 1
+            },
+            "actual": {
+                "max": 1
+            },
+            "target": {
+                "max": 1
+            },
+            "Threshold": {
+                "max": 1
+            },
+            "tooltip": {
+                "max": 7
+            }
+        }],
+    "categorical": {
+            "categories": {
+                "for": {
+                    "in": "region"
+                },
+                "dataReductionAlgorithm": {
+                    "top": {
+                        "count": 1000
+                    }
+                }
+            },
+            "values": {
+                "select": [{
+                    "bind": {
+                        "to": "region"
+                    }
+                }, {
+                    "bind": {
+                        "to": "actual"
+                    }
+                }, {
+                    "bind": {
+                        "to": "target"
+                    }
+                },{
+                    "bind": {
+                        "to": "Threshold"
+                    }
+                 },{
+                    "bind": {
+                        "to": "tooltip"
+                    }
+                }]
+            }
+        }
+    }],
+     "objects": {
+    "myColor": {
+
+      "displayName": "Result Format",
+        "properties": {
+           "myKPIColorDynamic": {
+                "displayName": "Dynamic Color for KPI",
+                    "type": { "bool": true
+                            }
+                 },
+         
+          "myRectangleColour": {
+          "displayName": "Colour of KPI Value",
+          "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+        },
+        "myMin": {            
+            "displayName": "Min",
+            "type": { "text": true
+                },
+            "description": "Min",
+            "placeHolderText": "Min"
+        },
+        "myMax": {
+            "displayName": "Max", 
+            "type": { "text": true
+            },
+            "description": "Max",
+            "placeHolderText": "Max"
+        },
+        "myMetricFormat": {
+            "displayName": "MetricFormat", 
+            "type": { "text": true
+            },
+            "description": "MetricFormat",
+            "placeHolderText": "MetricFormat"
+        },
+        "myDecimal": {
+            "displayName": "Decimal", 
+            "type": { "text": true
+            },
+            "description": "Decimal",
+            "placeHolderText": "Decimal"
+        },        
+               
+        "myNumberSize": {
+            "displayName": "NumberSize", 
+            "type": { "text": true
+            },
+            "description": "Number Size",
+            "placeHolderText": "Number Size"
+        },
+        "myDisplayUnits":{  
+            "displayName":"Display Units",
+            "type":{ "enumeration": [
+              {"displayName": "Auto", "value": "Auto"},
+              {"displayName": "None", "value": "None"},
+              {"displayName": "Thousands", "value": "Thousands"},
+              {"displayName": "Millions", "value": "Millions"},
+              {"displayName": "Billions", "value": "Billions"},
+              {"displayName": "Trillions", "value": "Trillions"}
+              ]   
+          }
+         },
+         "myTargetHideShow": {
+            "displayName": "Show Target",
+                "type": { "bool": true
+                        }
+        },
+        "vBehavior": {
+            "displayName": "Visual Behavior",
+                "type": { "bool": true
+                        }
+        },
+        "vShowArrow": {
+            "displayName": "Show Arrow",
+                "type": { "bool": true
+                        }
+        }
+        }
+        }
+    }
+}
+
