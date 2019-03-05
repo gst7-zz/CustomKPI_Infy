@@ -57,6 +57,7 @@ import ValueFormatter = powerbi.extensibility.utils.formatting.valueFormatter;
         //gst end        
 
         constructor(options: VisualConstructorOptions) {
+            debugger;
 
             this.host = options.host; //gst
             console.log('Visual constructor', options);
@@ -81,7 +82,7 @@ import ValueFormatter = powerbi.extensibility.utils.formatting.valueFormatter;
             let actual1;
             let target1;
             let Threshold;
-            //debugger;
+            debugger;
             // code to map variable to input parameters values
 
             if (options.dataViews[0].categorical.values[0] != undefined) {
@@ -269,7 +270,7 @@ import ValueFormatter = powerbi.extensibility.utils.formatting.valueFormatter;
             //     wordVal = topHundred + " hundred " + remainerHundred;
             // }
 
-            //   debugger;
+               debugger;
             //actual1=5566609.63;
             let Result: any;
             let Goal: any;
